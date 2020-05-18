@@ -1,0 +1,3 @@
+Reproduction case for https://github.com/hashicorp/terraform/issues/24975
+
+Note that this currently does not show a problem
