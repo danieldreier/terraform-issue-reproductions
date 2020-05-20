@@ -17,3 +17,9 @@ resource "azurerm_managed_disk" "managed_disk" {
   disk_size_gb         = 64
   zones                = [1]
 }
+
+output "id" {
+  description = "Managed disk ids"
+  value = azurerm_managed_disk.managed_disk[*].id
+}
+
