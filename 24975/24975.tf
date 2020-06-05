@@ -84,7 +84,7 @@ resource "aws_route_table" "My_VPC_route_table" {
 
 # Associate the Route Table with the Subnet
 resource "aws_route_table_association" "My_VPC_association" {
-  subnet_id      = aws_subnet.My_VPC_Subnet.id
+  subnet_id      = aws_subnet.example.id
   route_table_id = aws_route_table.My_VPC_route_table.id
 }
 
