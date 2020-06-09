@@ -1,3 +1,0 @@
-Reproduction case for https://github.com/hashicorp/terraform/issues/24975
-
-If you look at and run `run.sh`, you'll see that this creates a set of AWS resources, destroys them, and then when you recover the backup state file and re-run destroy, it reports that it is destroying one resource that was presumably destroyed in the first destroy.
