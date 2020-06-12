@@ -1,0 +1,7 @@
+terraform {
+  backend "s3" {
+    bucket = "danieldreier-tf-state"
+    key    = "repro/tf-17663/state"
+    region = "us-west-2"
+  }
+}
