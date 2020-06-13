@@ -1,0 +1,13 @@
+{
+    "locals": {
+      "s3region": {
+        "123": "reg"
+      },
+      "s3bucket": {
+        "123": "buck"
+      },
+      "name": {
+        "123": "prod"
+      }
+    }
+}
