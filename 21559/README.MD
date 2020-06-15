@@ -1,6 +1,6 @@
 Reproduction case for https://github.com/hashicorp/terraform/issues/21559
 
-Status: reproduced with older version
+Status: reproduced with 0.12.0 and not reproduced on 0.12.26
 
 Output of `run.sh`:
 ```
