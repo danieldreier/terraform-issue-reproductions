@@ -17,7 +17,7 @@ module "live" {
 }
 
 output "config" {
-  #type = list // this is weird!!
+  type = list
   value = lookup(local.configs, module.live.name)
 }
 
