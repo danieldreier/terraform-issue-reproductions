@@ -1,4 +1,4 @@
 output "public_ip" {
-  value = "${google_compute_address.get_ip.*.address}"
+  value = ["104.131.132.243"]
 }
 

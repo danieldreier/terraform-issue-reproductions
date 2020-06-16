@@ -1,0 +1,2152 @@
+2020/06/15 21:00:16 [INFO] Terraform version: 0.12.19  
+2020/06/15 21:00:16 [INFO] Go runtime version: go1.13.5
+2020/06/15 21:00:16 [INFO] CLI args: []string{"/usr/local/bin/terraform", "apply", "--var-file=vars/ops.tfvars", "-auto-approve"}
+2020/06/15 21:00:16 [DEBUG] Attempting to open CLI config file: /Users/baroukhovadia/.terraformrc
+2020/06/15 21:00:16 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2020/06/15 21:00:16 [DEBUG] checking for credentials in "/Users/baroukhovadia/.terraform.d/plugins"
+2020/06/15 21:00:16 [INFO] CLI command args: []string{"apply", "--var-file=vars/ops.tfvars", "-auto-approve"}
+2020/06/15 21:00:16 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2020/06/15 21:00:16 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2020/06/15 21:00:16 [DEBUG] New state was assigned lineage "6c255735-d8a6-8f5e-d7dc-873704e3181c"
+2020/06/15 21:00:16 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2020/06/15 21:00:16 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2020/06/15 21:00:16 [DEBUG] checking for provider in "."
+2020/06/15 21:00:16 [DEBUG] checking for provider in "/usr/local/bin"
+2020/06/15 21:00:16 [DEBUG] checking for provider in ".terraform/plugins/darwin_amd64"
+2020/06/15 21:00:16 [DEBUG] found provider "terraform-provider-google_v3.26.0_x5"
+2020/06/15 21:00:16 [DEBUG] checking for provider in "/Users/baroukhovadia/.terraform.d/plugins"
+2020/06/15 21:00:16 [WARN] found legacy provider "terraform-provider-bandwidth"
+2020/06/15 21:00:16 [DEBUG] found valid plugin: "google", "3.26.0", "/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5"
+2020/06/15 21:00:16 [DEBUG] found valid plugin: "bandwidth", "0.0.0", "/Users/baroukhovadia/.terraform.d/plugins/terraform-provider-bandwidth"
+2020/06/15 21:00:16 [DEBUG] checking for provisioner in "."
+2020/06/15 21:00:16 [DEBUG] checking for provisioner in "/usr/local/bin"
+2020/06/15 21:00:16 [DEBUG] checking for provisioner in ".terraform/plugins/darwin_amd64"
+2020/06/15 21:00:16 [DEBUG] checking for provisioner in "/Users/baroukhovadia/.terraform.d/plugins"
+2020/06/15 21:00:16 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2020/06/15 21:00:16 [INFO] backend/local: starting Apply operation
+2020/06/15 21:00:16 [TRACE] backend/local: requesting state manager for workspace "default"
+2020/06/15 21:00:16 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2020/06/15 21:00:16 [TRACE] backend/local: requesting state lock for workspace "default"
+2020/06/15 21:00:16 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2020/06/15 21:00:16 [TRACE] statemgr.Filesystem: existing snapshot has lineage "71537ea8-32a3-a6c6-c152-49255c06f345" serial 29
+2020/06/15 21:00:16 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2020/06/15 21:00:16 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2020/06/15 21:00:16 [TRACE] backend/local: reading remote state for workspace "default"
+2020/06/15 21:00:16 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2020/06/15 21:00:16 [TRACE] statemgr.Filesystem: read snapshot with lineage "71537ea8-32a3-a6c6-c152-49255c06f345" serial 29
+2020/06/15 21:00:16 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2020/06/15 21:00:16 [TRACE] backend/local: building context for current working directory
+2020/06/15 21:00:16 [TRACE] terraform.NewContext: starting
+2020/06/15 21:00:16 [TRACE] terraform.NewContext: resolving provider version selections
+2020/06/15 21:00:16 [TRACE] terraform.NewContext: loading provider schemas
+2020/06/15 21:00:16 [TRACE] LoadSchemas: retrieving schema for provider type "google"
+2020-06-15T21:00:16.604-0700 [INFO]  plugin: configuring client automatic mTLS
+2020-06-15T21:00:16.626-0700 [DEBUG] plugin: starting plugin: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 args=[/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5]
+2020-06-15T21:00:16.630-0700 [DEBUG] plugin: plugin started: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86288
+2020-06-15T21:00:16.630-0700 [DEBUG] plugin: waiting for RPC address: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5
+2020-06-15T21:00:16.645-0700 [INFO]  plugin.terraform-provider-google_v3.26.0_x5: configuring server automatic mTLS: timestamp=2020-06-15T21:00:16.645-0700
+2020-06-15T21:00:16.669-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: plugin address: address=/var/folders/hz/jl_rjbwx26d5sq47yn7506_40000gn/T/plugin636542063 network=unix timestamp=2020-06-15T21:00:16.669-0700
+2020-06-15T21:00:16.669-0700 [DEBUG] plugin: using plugin: version=5
+2020/06/15 21:00:16 [TRACE] GRPCProvider: GetSchema
+2020/06/15 21:00:16 [TRACE] GRPCProvider: Close
+2020-06-15T21:00:16.743-0700 [DEBUG] plugin: plugin process exited: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86288
+2020-06-15T21:00:16.743-0700 [DEBUG] plugin: plugin exited
+2020/06/15 21:00:16 [TRACE] terraform.NewContext: complete
+2020/06/15 21:00:16 [TRACE] backend/local: finished building terraform.Context
+2020/06/15 21:00:16 [TRACE] backend/local: requesting interactive input, if necessary
+2020/06/15 21:00:16 [TRACE] Context.Input: Prompting for provider arguments
+2020/06/15 21:00:16 [TRACE] Context.Input: Provider provider.google declared at main.tf:1,1-18
+2020/06/15 21:00:16 [TRACE] Context.Input: Input for provider.google: map[string]cty.Value{}
+2020/06/15 21:00:16 [TRACE] backend/local: running validation operation
+2020/06/15 21:00:16 [INFO] terraform: building graph: GraphTypeValidate
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/06/15 21:00:16 [TRACE] ConfigTransformer: Starting for path: 
+2020/06/15 21:00:16 [TRACE] ConfigTransformer: Starting for path: sbc
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/06/15 21:00:16 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/06/15 21:00:16 [TRACE] AttachResourceConfigTransformer: attaching to "google_dns_record_set.zones" (*terraform.NodeValidatableResource) config from main.tf:8,1-41
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/06/15 21:00:16 [TRACE] ProviderConfigTransformer: attaching to "provider.google" provider configuration from main.tf:1,1-18
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/06/15 21:00:16 [TRACE] ProviderTransformer: google_dns_record_set.zones is provided by provider.google or inherited equivalent
+2020/06/15 21:00:16 [TRACE] ProviderTransformer: exact match for provider.google serving google_dns_record_set.zones
+2020/06/15 21:00:16 [DEBUG] ProviderTransformer: "google_dns_record_set.zones" (*terraform.NodeValidatableResource) needs provider.google
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+    provider.google - *terraform.NodeApplyableProvider
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+    provider.google - *terraform.NodeApplyableProvider
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/06/15 21:00:16 [TRACE] AttachSchemaTransformer: attaching resource schema to google_dns_record_set.zones
+2020/06/15 21:00:16 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.google
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.hosts" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.gcp_project" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.gcp_region" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.dns_zone" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "module.sbc.var.hosts" references: [var.hosts]
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "module.sbc.output.public_ip" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.service_account_id" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.config" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "provider.google" references: [var.environment var.gcp_zone var.gcp_project var.gcp_region]
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.gcp_zone" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "google_dns_record_set.zones" references: [var.dns_zone var.config]
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "module.sbc.output.test" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.environment" references: []
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodeValidatableResource
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodeValidatableResource
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodeValidatableResource
+    provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodeValidatableResource
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodeValidatableResource
+    provider.google - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.google (close) - *terraform.graphNodeCloseProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeValidatableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodeValidatableResource
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodeValidatableResource
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.google (close) - *terraform.graphNodeCloseProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [DEBUG] Starting graph walk: walkValidate
+2020/06/15 21:00:16 [TRACE] dag/walk: updating graph
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "module.sbc.var.hosts"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.gcp_region"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "provider.google (close)"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "root"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "module.sbc.output.public_ip"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.config"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.hosts"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "module.sbc.output.test"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.gcp_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.environment"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.gcp_project"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "provider.google"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.service_account_id"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "google_dns_record_set.zones"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.dns_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "module.sbc.var.hosts" waiting on "var.hosts"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_project"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "root" waiting on "provider.google (close)"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google (close)" waiting on "google_dns_record_set.zones"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "var.dns_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_region"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "module.sbc.var.hosts"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "var.service_account_id"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "var.config"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "google_dns_record_set.zones"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "module.sbc.output.public_ip"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "module.sbc.output.test"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "provider.google"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.environment"
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "module.sbc.var.hosts", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "provider.google", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "provider.google (close)", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "google_dns_record_set.zones", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.config"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.hosts"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "module.sbc.output.public_ip"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.service_account_id"
+2020/06/15 21:00:16 [TRACE] vertex "var.service_account_id": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.dns_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "module.sbc.output.test"
+2020/06/15 21:00:16 [TRACE] vertex "var.service_account_id": visit complete
+2020/06/15 21:00:16 [TRACE] vertex "var.hosts": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.public_ip": starting visit (*terraform.NodeApplyableOutput)
+2020/06/15 21:00:16 [TRACE] vertex "var.config": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.gcp_project"
+2020/06/15 21:00:16 [TRACE] vertex "var.dns_zone": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] vertex "var.dns_zone": visit complete
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.environment"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.gcp_region"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.gcp_zone"
+2020/06/15 21:00:16 [TRACE] vertex "var.hosts": visit complete
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.test": starting visit (*terraform.NodeApplyableOutput)
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_project": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "module.sbc.var.hosts"
+2020/06/15 21:00:16 [TRACE] vertex "var.environment": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.var.hosts": starting visit (*terraform.NodeApplyableModuleVariable)
+2020/06/15 21:00:16 [TRACE] vertex "var.environment": visit complete
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_project": visit complete
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.var.hosts": evaluating
+2020/06/15 21:00:16 [TRACE] [walkValidate] Entering eval tree: module.sbc.var.hosts
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_zone": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalModuleCallArgument
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_zone": visit complete
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_region": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_region": visit complete
+2020/06/15 21:00:16 [TRACE] vertex "var.config": visit complete
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "provider.google"
+2020/06/15 21:00:16 [TRACE] vertex "provider.google": starting visit (*terraform.NodeApplyableProvider)
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.test": evaluating
+2020/06/15 21:00:16 [TRACE] vertex "provider.google": evaluating
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.public_ip": evaluating
+2020/06/15 21:00:16 [TRACE] [walkValidate] Entering eval tree: module.sbc.output.public_ip
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalWriteOutput
+2020/06/15 21:00:16 [TRACE] [walkValidate] Entering eval tree: provider.google
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020/06/15 21:00:16 [TRACE] [walkValidate] Entering eval tree: module.sbc.output.test
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalWriteOutput
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSetModuleCallArguments
+2020/06/15 21:00:16 [TRACE] [walkValidate] Exiting eval tree: module.sbc.var.hosts
+2020/06/15 21:00:16 [TRACE] EvalWriteOutput: Saving value for module.sbc.output.public_ip in state
+2020/06/15 21:00:16 [TRACE] EvalWriteOutput: Saving value for module.sbc.output.test in state
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.var.hosts": visit complete
+2020/06/15 21:00:16 [TRACE] EvalWriteOutput: Saving Create change for module.sbc.output.test in changeset
+2020/06/15 21:00:16 [TRACE] [walkValidate] Exiting eval tree: module.sbc.output.test
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.test": visit complete
+2020-06-15T21:00:16.746-0700 [INFO]  plugin: configuring client automatic mTLS
+2020/06/15 21:00:16 [TRACE] EvalWriteOutput: Saving Create change for module.sbc.output.public_ip in changeset
+2020/06/15 21:00:16 [TRACE] [walkValidate] Exiting eval tree: module.sbc.output.public_ip
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.public_ip": visit complete
+2020-06-15T21:00:16.767-0700 [DEBUG] plugin: starting plugin: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 args=[/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5]
+2020-06-15T21:00:16.771-0700 [DEBUG] plugin: plugin started: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86289
+2020-06-15T21:00:16.771-0700 [DEBUG] plugin: waiting for RPC address: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5
+2020-06-15T21:00:16.786-0700 [INFO]  plugin.terraform-provider-google_v3.26.0_x5: configuring server automatic mTLS: timestamp=2020-06-15T21:00:16.785-0700
+2020-06-15T21:00:16.809-0700 [DEBUG] plugin: using plugin: version=5
+2020-06-15T21:00:16.809-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: plugin address: address=/var/folders/hz/jl_rjbwx26d5sq47yn7506_40000gn/T/plugin826508876 network=unix timestamp=2020-06-15T21:00:16.809-0700
+2020/06/15 21:00:16 [TRACE] BuiltinEvalContext: Initialized "google" provider for provider.google
+2020/06/15 21:00:16 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalValidateProvider
+2020/06/15 21:00:16 [TRACE] buildProviderConfig for provider.google: using explicit config only
+2020/06/15 21:00:16 [TRACE] GRPCProvider: GetSchema
+2020/06/15 21:00:16 [TRACE] GRPCProvider: PrepareProviderConfig
+2020/06/15 21:00:16 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:16 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:16 [TRACE] [walkValidate] Exiting eval tree: provider.google
+2020/06/15 21:00:16 [TRACE] vertex "provider.google": visit complete
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "google_dns_record_set.zones"
+2020/06/15 21:00:16 [TRACE] vertex "google_dns_record_set.zones": starting visit (*terraform.NodeValidatableResource)
+2020/06/15 21:00:16 [TRACE] vertex "google_dns_record_set.zones": evaluating
+2020/06/15 21:00:16 [TRACE] [walkValidate] Entering eval tree: google_dns_record_set.zones
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2020/06/15 21:00:16 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/06/15 21:00:16 [TRACE] [walkValidate] Exiting eval tree: google_dns_record_set.zones
+2020/06/15 21:00:16 [TRACE] vertex "google_dns_record_set.zones": visit complete
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "provider.google (close)"
+2020/06/15 21:00:16 [TRACE] vertex "provider.google (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/06/15 21:00:16 [TRACE] vertex "provider.google (close)": evaluating
+2020/06/15 21:00:16 [TRACE] [walkValidate] Entering eval tree: provider.google (close)
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalCloseProvider
+2020/06/15 21:00:16 [TRACE] GRPCProvider: Close
+2020/06/15 21:00:16 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2020/06/15 21:00:16 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2020/06/15 21:00:16 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (EachMode fixup)
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2020/06/15 21:00:16 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2020/06/15 21:00:16 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2020-06-15T21:00:16.907-0700 [DEBUG] plugin: plugin process exited: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86289
+2020-06-15T21:00:16.907-0700 [DEBUG] plugin: plugin exited
+2020/06/15 21:00:16 [TRACE] [walkValidate] Exiting eval tree: provider.google (close)
+2020/06/15 21:00:16 [TRACE] vertex "provider.google (close)": visit complete
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "root"
+2020/06/15 21:00:16 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2020/06/15 21:00:16 [TRACE] vertex "root": visit complete
+2020/06/15 21:00:16 [INFO] backend/local: apply calling Refresh
+2020/06/15 21:00:16 [INFO] terraform: building graph: GraphTypeRefresh
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/06/15 21:00:16 [TRACE] ConfigTransformer: Starting for path: 
+2020/06/15 21:00:16 [TRACE] ConfigTransformer: Starting for path: sbc
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/06/15 21:00:16 [TRACE] ConfigTransformer: Starting for path: 
+2020/06/15 21:00:16 [TRACE] ConfigTransformer: Starting for path: sbc
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.ConfigTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/06/15 21:00:16 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/06/15 21:00:16 [TRACE] AttachResourceConfigTransformer: attaching to "google_dns_record_set.zones" (*terraform.NodeRefreshableManagedResource) config from main.tf:8,1-41
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/06/15 21:00:16 [TRACE] ProviderConfigTransformer: attaching to "provider.google" provider configuration from main.tf:1,1-18
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/06/15 21:00:16 [TRACE] ProviderTransformer: google_dns_record_set.zones is provided by provider.google or inherited equivalent
+2020/06/15 21:00:16 [TRACE] ProviderTransformer: exact match for provider.google serving google_dns_record_set.zones
+2020/06/15 21:00:16 [DEBUG] ProviderTransformer: "google_dns_record_set.zones" (*terraform.NodeRefreshableManagedResource) needs provider.google
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+    provider.google - *terraform.NodeApplyableProvider
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/06/15 21:00:16 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+    provider.google - *terraform.NodeApplyableProvider
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/06/15 21:00:16 [TRACE] AttachSchemaTransformer: attaching resource schema to google_dns_record_set.zones
+2020/06/15 21:00:16 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.google
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "module.sbc.output.test" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "module.sbc.output.public_ip" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "module.sbc.var.hosts" references: [var.hosts]
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "provider.google" references: [var.gcp_project var.gcp_zone var.gcp_region var.environment]
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.service_account_id" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.environment" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.gcp_project" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.gcp_region" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.gcp_zone" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.dns_zone" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.config" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "var.hosts" references: []
+2020/06/15 21:00:16 [DEBUG] ReferenceTransformer: "google_dns_record_set.zones" references: [var.dns_zone var.config]
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/06/15 21:00:16 [TRACE] AttachDependenciesTransformer: google_dns_record_set.zones depends on []
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+    provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+    provider.google - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    provider.google (close) - *terraform.graphNodeCloseProvider
+    var.service_account_id - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/06/15 21:00:16 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodeRefreshableManagedResource
+  root - terraform.graphNodeRoot
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    provider.google (close) - *terraform.graphNodeCloseProvider
+    var.service_account_id - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:16 [DEBUG] Starting graph walk: walkRefresh
+2020/06/15 21:00:16 [TRACE] dag/walk: updating graph
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.gcp_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.dns_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.gcp_region"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.environment"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "module.sbc.output.public_ip"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "google_dns_record_set.zones"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "root"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.gcp_project"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "provider.google"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.service_account_id"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.config"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "var.hosts"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "provider.google (close)"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "module.sbc.output.test"
+2020/06/15 21:00:16 [TRACE] dag/walk: added new vertex: "module.sbc.var.hosts"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "module.sbc.var.hosts" waiting on "var.hosts"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "provider.google"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_project"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.environment"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "root" waiting on "var.service_account_id"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_region"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "var.dns_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "provider.google (close)" waiting on "google_dns_record_set.zones"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "root" waiting on "module.sbc.var.hosts"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "root" waiting on "module.sbc.output.test"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "root" waiting on "provider.google (close)"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "root" waiting on "module.sbc.output.public_ip"
+2020/06/15 21:00:16 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "var.config"
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "module.sbc.var.hosts", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "google_dns_record_set.zones", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "provider.google", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: dependencies changed for "provider.google (close)", sending new deps
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.service_account_id"
+2020/06/15 21:00:16 [TRACE] vertex "var.service_account_id": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.gcp_region"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.gcp_project"
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_project": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.dns_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.gcp_zone"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "module.sbc.output.public_ip"
+2020/06/15 21:00:16 [TRACE] vertex "var.dns_zone": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_zone": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.config"
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_zone": visit complete
+2020/06/15 21:00:16 [TRACE] vertex "var.dns_zone": visit complete
+2020/06/15 21:00:16 [TRACE] vertex "var.config": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_region": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.environment"
+2020/06/15 21:00:16 [TRACE] vertex "var.config": visit complete
+2020/06/15 21:00:16 [TRACE] vertex "var.environment": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] vertex "var.environment": visit complete
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "var.hosts"
+2020/06/15 21:00:16 [TRACE] vertex "var.hosts": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:16 [TRACE] vertex "var.hosts": visit complete
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "module.sbc.output.test"
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "module.sbc.var.hosts"
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.var.hosts": starting visit (*terraform.NodeApplyableModuleVariable)
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.test": starting visit (*terraform.NodeApplyableOutput)
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.var.hosts": evaluating
+2020/06/15 21:00:16 [TRACE] [walkRefresh] Entering eval tree: module.sbc.var.hosts
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_project": visit complete
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.public_ip": starting visit (*terraform.NodeApplyableOutput)
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalModuleCallArgument
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.public_ip": evaluating
+2020/06/15 21:00:16 [TRACE] [walkRefresh] Entering eval tree: module.sbc.output.public_ip
+2020/06/15 21:00:16 [TRACE] vertex "var.gcp_region": visit complete
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalWriteOutput
+2020/06/15 21:00:16 [TRACE] vertex "var.service_account_id": visit complete
+2020/06/15 21:00:16 [TRACE] dag/walk: visiting "provider.google"
+2020/06/15 21:00:16 [TRACE] vertex "provider.google": starting visit (*terraform.NodeApplyableProvider)
+2020/06/15 21:00:16 [TRACE] vertex "provider.google": evaluating
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.test": evaluating
+2020/06/15 21:00:16 [TRACE] [walkRefresh] Entering eval tree: provider.google
+2020/06/15 21:00:16 [TRACE] [walkRefresh] Entering eval tree: module.sbc.output.test
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] EvalWriteOutput: Saving value for module.sbc.output.public_ip in state
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSetModuleCallArguments
+2020/06/15 21:00:16 [TRACE] [walkRefresh] Exiting eval tree: module.sbc.var.hosts
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.var.hosts": visit complete
+2020/06/15 21:00:16 [TRACE] EvalWriteOutput: Saving Create change for module.sbc.output.public_ip in changeset
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] [walkRefresh] Exiting eval tree: module.sbc.output.public_ip
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.public_ip": visit complete
+2020/06/15 21:00:16 [TRACE] module.sbc: eval: *terraform.EvalWriteOutput
+2020-06-15T21:00:16.909-0700 [INFO]  plugin: configuring client automatic mTLS
+2020/06/15 21:00:16 [TRACE] EvalWriteOutput: Saving value for module.sbc.output.test in state
+2020/06/15 21:00:16 [TRACE] EvalWriteOutput: Saving Create change for module.sbc.output.test in changeset
+2020/06/15 21:00:16 [TRACE] [walkRefresh] Exiting eval tree: module.sbc.output.test
+2020/06/15 21:00:16 [TRACE] vertex "module.sbc.output.test": visit complete
+2020-06-15T21:00:16.930-0700 [DEBUG] plugin: starting plugin: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 args=[/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5]
+2020-06-15T21:00:16.934-0700 [DEBUG] plugin: plugin started: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86290
+2020-06-15T21:00:16.934-0700 [DEBUG] plugin: waiting for RPC address: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5
+2020-06-15T21:00:16.949-0700 [INFO]  plugin.terraform-provider-google_v3.26.0_x5: configuring server automatic mTLS: timestamp=2020-06-15T21:00:16.949-0700
+2020-06-15T21:00:16.972-0700 [DEBUG] plugin: using plugin: version=5
+2020-06-15T21:00:16.973-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: plugin address: address=/var/folders/hz/jl_rjbwx26d5sq47yn7506_40000gn/T/plugin570124817 network=unix timestamp=2020-06-15T21:00:16.972-0700
+2020/06/15 21:00:16 [TRACE] BuiltinEvalContext: Initialized "google" provider for provider.google
+2020/06/15 21:00:16 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:16 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:16 [TRACE] <root>: eval: *terraform.EvalConfigProvider
+2020/06/15 21:00:16 [TRACE] buildProviderConfig for provider.google: using explicit config only
+2020/06/15 21:00:16 [TRACE] GRPCProvider: GetSchema
+2020/06/15 21:00:17 [TRACE] GRPCProvider: Configure
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Authenticating using configured Google JSON 'credentials'...
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO]   -- Scopes: [https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/userinfo.email]
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GCE client for path https://www.googleapis.com/compute/v1/projects/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GCE Beta client for path https://www.googleapis.com/compute/beta/projects/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GKE client for path https://container.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GKE Beta client for path https://container.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud DNS client for path https://www.googleapis.com/dns/v1/projects/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud DNS Beta client for path https://www.googleapis.com/dns/v1beta2/projects/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud KMS client for path https://cloudkms.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Stackdriver Logging client for path https://logging.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Storage client for path https://www.googleapis.com/storage/v1/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google SqlAdmin client for path https://sqladmin.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Pubsub client for path https://pubsub.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Dataflow client for path https://dataflow.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud ResourceManager client for path https://cloudresourcemanager.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud ResourceManager V client for path https://cloudresourcemanager.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Runtimeconfig client for path https://runtimeconfig.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud IAM client for path https://iam.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud IAMCredentials client for path https://iamcredentials.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Service Management client for path https://servicemanagement.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Service Usage client for path https://serviceusage.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Billing client for path https://cloudbilling.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Build client for path https://cloudbuild.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud BigQuery client for path https://www.googleapis.com/bigquery/v2/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud CloudFunctions Client for path https://cloudfunctions.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud BigtableAdmin for path https://bigtableadmin.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Source Repo client for path https://sourcerepo.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Spanner client for path https://spanner.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Dataproc client for path https://dataproc.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Dataproc Beta client for path https://dataproc.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Filestore client for path https://file.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud IoT Core client for path 
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating App Engine client for path https://appengine.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Cloud Composer client for path https://composer.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Service Networking client for path https://servicenetworking.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Storage Transfer client for path https://storagetransfer.googleapis.com/
+2020-06-15T21:00:17.045-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Healthcare client for path https://healthcare.googleapis.com/
+2020/06/15 21:00:17 [TRACE] [walkRefresh] Exiting eval tree: provider.google
+2020/06/15 21:00:17 [TRACE] vertex "provider.google": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": starting visit (*terraform.NodeRefreshableManagedResource)
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": expanding dynamic subgraph
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeRefreshableManagedResourceInstance
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/06/15 21:00:17 [DEBUG] Resource instance state not found for node "google_dns_record_set.zones", instance google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "google_dns_record_set.zones" references: []
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": entering dynamic subgraph
+2020/06/15 21:00:17 [TRACE] dag/walk: updating graph
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": starting visit (*terraform.NodeRefreshableManagedResourceInstance)
+2020/06/15 21:00:17 [TRACE] NodeRefreshableManagedResourceInstance: google_dns_record_set.zones has no existing state to refresh
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": evaluating
+2020/06/15 21:00:17 [TRACE] [walkRefresh] Entering eval tree: google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/06/15 21:00:17 [TRACE] EvalReadState: reading state for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] EvalReadState: no state present for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalDiff
+2020/06/15 21:00:17 [TRACE] Re-validating config for "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/06/15 21:00:17 [TRACE] GRPCProvider: PlanResourceChange
+2020/06/15 21:00:17 [WARN] Provider "registry.terraform.io/-/google" produced an invalid plan for google_dns_record_set.zones, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .rrdatas: planned value cty.UnknownVal(cty.List(cty.String)) does not match config value cty.ListVal([]cty.Value{cty.UnknownVal(cty.String)})
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/06/15 21:00:17 [TRACE] EvalWriteState: recording 0 dependencies for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] EvalWriteState: writing current state object for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalWriteDiff
+2020/06/15 21:00:17 [TRACE] EvalWriteDiff: recorded Create change for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] [walkRefresh] Exiting eval tree: google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": visit complete
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": dynamic subgraph completed successfully
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "provider.google (close)"
+2020/06/15 21:00:17 [TRACE] vertex "provider.google (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/06/15 21:00:17 [TRACE] vertex "provider.google (close)": evaluating
+2020/06/15 21:00:17 [TRACE] [walkRefresh] Entering eval tree: provider.google (close)
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalCloseProvider
+2020/06/15 21:00:17 [TRACE] GRPCProvider: Close
+2020-06-15T21:00:17.049-0700 [DEBUG] plugin: plugin process exited: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86290
+2020-06-15T21:00:17.049-0700 [DEBUG] plugin: plugin exited
+2020/06/15 21:00:17 [TRACE] [walkRefresh] Exiting eval tree: provider.google (close)
+2020/06/15 21:00:17 [TRACE] vertex "provider.google (close)": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "root"
+2020/06/15 21:00:17 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2020/06/15 21:00:17 [TRACE] vertex "root": visit complete
+2020/06/15 21:00:17 [INFO] backend/local: apply calling Plan
+2020/06/15 21:00:17 [INFO] terraform: building graph: GraphTypePlan
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/06/15 21:00:17 [TRACE] ConfigTransformer: Starting for path: 
+2020/06/15 21:00:17 [TRACE] ConfigTransformer: Starting for path: sbc
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/06/15 21:00:17 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/06/15 21:00:17 [TRACE] AttachResourceConfigTransformer: attaching to "google_dns_record_set.zones" (*terraform.NodePlannableResource) config from main.tf:8,1-41
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/06/15 21:00:17 [TRACE] ProviderConfigTransformer: attaching to "provider.google" provider configuration from main.tf:1,1-18
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/06/15 21:00:17 [TRACE] ProviderTransformer: google_dns_record_set.zones is provided by provider.google or inherited equivalent
+2020/06/15 21:00:17 [TRACE] ProviderTransformer: exact match for provider.google serving google_dns_record_set.zones
+2020/06/15 21:00:17 [DEBUG] ProviderTransformer: "google_dns_record_set.zones" (*terraform.NodePlannableResource) needs provider.google
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+    provider.google - *terraform.NodeApplyableProvider
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+    provider.google - *terraform.NodeApplyableProvider
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/06/15 21:00:17 [TRACE] AttachSchemaTransformer: attaching resource schema to google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.google
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.gcp_zone" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.dns_zone" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.service_account_id" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.hosts" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.gcp_region" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "provider.google" references: [var.gcp_region var.environment var.gcp_project var.gcp_zone]
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "google_dns_record_set.zones" references: [var.dns_zone var.config]
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "module.sbc.output.test" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "module.sbc.output.public_ip" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.config" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.environment" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.gcp_project" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "module.sbc.var.hosts" references: [var.hosts]
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodePlannableResource
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/06/15 21:00:17 [TRACE] ForcedCBDTransformer: "google_dns_record_set.zones" (*terraform.NodePlannableResource) has no CBD descendent, so skipping
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodePlannableResource
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodePlannableResource
+    provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodePlannableResource
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodePlannableResource
+    provider.google - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.google (close) - *terraform.graphNodeCloseProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodePlannableResource
+    module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+    module.sbc.output.test - *terraform.NodeApplyableOutput
+    module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodePlannableResource
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.google (close) - *terraform.graphNodeCloseProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [DEBUG] Starting graph walk: walkPlan
+2020/06/15 21:00:17 [TRACE] dag/walk: updating graph
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "module.sbc.output.public_ip"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.gcp_project"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "provider.google"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.gcp_region"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "module.sbc.var.hosts"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.hosts"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.environment"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.config"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.gcp_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "provider.google (close)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.dns_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "module.sbc.output.test"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "root"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.service_account_id"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_project"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "root" waiting on "provider.google (close)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_region"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "var.config"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "provider.google"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "var.dns_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "module.sbc.var.hosts" waiting on "var.hosts"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google (close)" waiting on "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "var.service_account_id"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "module.sbc.output.test"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.environment"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "module.sbc.var.hosts"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "module.sbc.output.public_ip"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "module.sbc.var.hosts", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "provider.google (close)", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "provider.google", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "google_dns_record_set.zones", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "module.sbc.output.public_ip"
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.service_account_id"
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.gcp_project"
+2020/06/15 21:00:17 [TRACE] vertex "module.sbc.output.public_ip": starting visit (*terraform.NodeApplyableOutput)
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.hosts"
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.dns_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.config"
+2020/06/15 21:00:17 [TRACE] vertex "var.hosts": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.config": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.hosts": visit complete
+2020/06/15 21:00:17 [TRACE] vertex "var.config": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.gcp_zone"
+2020/06/15 21:00:17 [TRACE] vertex "var.service_account_id": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_zone": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.service_account_id": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "module.sbc.var.hosts"
+2020/06/15 21:00:17 [TRACE] vertex "module.sbc.var.hosts": starting visit (*terraform.NodeApplyableModuleVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_project": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "module.sbc.var.hosts": evaluating
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_project": visit complete
+2020/06/15 21:00:17 [TRACE] [walkPlan] Entering eval tree: module.sbc.var.hosts
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_zone": visit complete
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalModuleCallArgument
+2020/06/15 21:00:17 [TRACE] vertex "var.dns_zone": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.dns_zone": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "module.sbc.output.test"
+2020/06/15 21:00:17 [TRACE] vertex "module.sbc.output.test": starting visit (*terraform.NodeApplyableOutput)
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.environment"
+2020/06/15 21:00:17 [TRACE] vertex "module.sbc.output.test": evaluating
+2020/06/15 21:00:17 [TRACE] vertex "var.environment": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] [walkPlan] Entering eval tree: module.sbc.output.test
+2020/06/15 21:00:17 [TRACE] module.sbc: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] module.sbc: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:17 [TRACE] vertex "var.environment": visit complete
+2020/06/15 21:00:17 [TRACE] module.sbc: eval: *terraform.EvalWriteOutput
+2020/06/15 21:00:17 [TRACE] vertex "module.sbc.output.public_ip": evaluating
+2020/06/15 21:00:17 [TRACE] [walkPlan] Entering eval tree: module.sbc.output.public_ip
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.gcp_region"
+2020/06/15 21:00:17 [TRACE] module.sbc: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_region": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] module.sbc: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:17 [TRACE] module.sbc: eval: *terraform.EvalWriteOutput
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_region": visit complete
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSetModuleCallArguments
+2020/06/15 21:00:17 [TRACE] EvalWriteOutput: Saving value for module.sbc.output.test in state
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "provider.google"
+2020/06/15 21:00:17 [TRACE] [walkPlan] Exiting eval tree: module.sbc.var.hosts
+2020/06/15 21:00:17 [TRACE] vertex "provider.google": starting visit (*terraform.NodeApplyableProvider)
+2020/06/15 21:00:17 [TRACE] EvalWriteOutput: Saving Create change for module.sbc.output.test in changeset
+2020/06/15 21:00:17 [TRACE] vertex "module.sbc.var.hosts": visit complete
+2020/06/15 21:00:17 [TRACE] [walkPlan] Exiting eval tree: module.sbc.output.test
+2020/06/15 21:00:17 [TRACE] vertex "provider.google": evaluating
+2020/06/15 21:00:17 [TRACE] vertex "module.sbc.output.test": visit complete
+2020/06/15 21:00:17 [TRACE] [walkPlan] Entering eval tree: provider.google
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020/06/15 21:00:17 [TRACE] EvalWriteOutput: Saving value for module.sbc.output.public_ip in state
+2020/06/15 21:00:17 [TRACE] EvalWriteOutput: Saving Create change for module.sbc.output.public_ip in changeset
+2020/06/15 21:00:17 [TRACE] [walkPlan] Exiting eval tree: module.sbc.output.public_ip
+2020/06/15 21:00:17 [TRACE] vertex "module.sbc.output.public_ip": visit complete
+2020-06-15T21:00:17.050-0700 [INFO]  plugin: configuring client automatic mTLS
+2020-06-15T21:00:17.072-0700 [DEBUG] plugin: starting plugin: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 args=[/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5]
+2020-06-15T21:00:17.076-0700 [DEBUG] plugin: plugin started: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86291
+2020-06-15T21:00:17.076-0700 [DEBUG] plugin: waiting for RPC address: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5
+2020-06-15T21:00:17.091-0700 [INFO]  plugin.terraform-provider-google_v3.26.0_x5: configuring server automatic mTLS: timestamp=2020-06-15T21:00:17.091-0700
+2020-06-15T21:00:17.116-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: plugin address: address=/var/folders/hz/jl_rjbwx26d5sq47yn7506_40000gn/T/plugin005659190 network=unix timestamp=2020-06-15T21:00:17.116-0700
+2020-06-15T21:00:17.116-0700 [DEBUG] plugin: using plugin: version=5
+2020/06/15 21:00:17 [TRACE] BuiltinEvalContext: Initialized "google" provider for provider.google
+2020/06/15 21:00:17 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:17 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalConfigProvider
+2020/06/15 21:00:17 [TRACE] buildProviderConfig for provider.google: using explicit config only
+2020/06/15 21:00:17 [TRACE] GRPCProvider: GetSchema
+2020/06/15 21:00:17 [TRACE] GRPCProvider: Configure
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Authenticating using configured Google JSON 'credentials'...
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO]   -- Scopes: [https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/userinfo.email]
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GCE client for path https://www.googleapis.com/compute/v1/projects/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GCE Beta client for path https://www.googleapis.com/compute/beta/projects/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GKE client for path https://container.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GKE Beta client for path https://container.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud DNS client for path https://www.googleapis.com/dns/v1/projects/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud DNS Beta client for path https://www.googleapis.com/dns/v1beta2/projects/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud KMS client for path https://cloudkms.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Stackdriver Logging client for path https://logging.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Storage client for path https://www.googleapis.com/storage/v1/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google SqlAdmin client for path https://sqladmin.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Pubsub client for path https://pubsub.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Dataflow client for path https://dataflow.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud ResourceManager client for path https://cloudresourcemanager.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud ResourceManager V client for path https://cloudresourcemanager.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Runtimeconfig client for path https://runtimeconfig.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud IAM client for path https://iam.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud IAMCredentials client for path https://iamcredentials.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Service Management client for path https://servicemanagement.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Service Usage client for path https://serviceusage.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Billing client for path https://cloudbilling.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Build client for path https://cloudbuild.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud BigQuery client for path https://www.googleapis.com/bigquery/v2/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud CloudFunctions Client for path https://cloudfunctions.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud BigtableAdmin for path https://bigtableadmin.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Source Repo client for path https://sourcerepo.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Spanner client for path https://spanner.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Dataproc client for path https://dataproc.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Dataproc Beta client for path https://dataproc.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Filestore client for path https://file.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud IoT Core client for path 
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating App Engine client for path https://appengine.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Cloud Composer client for path https://composer.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Service Networking client for path https://servicenetworking.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Storage Transfer client for path https://storagetransfer.googleapis.com/
+2020-06-15T21:00:17.188-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Healthcare client for path https://healthcare.googleapis.com/
+2020/06/15 21:00:17 [TRACE] [walkPlan] Exiting eval tree: provider.google
+2020/06/15 21:00:17 [TRACE] vertex "provider.google": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": starting visit (*terraform.NodePlannableResource)
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": evaluating
+2020/06/15 21:00:17 [TRACE] [walkPlan] Entering eval tree: google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalWriteResourceState
+2020/06/15 21:00:17 [TRACE] [walkPlan] Exiting eval tree: google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": expanding dynamic subgraph
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodePlannableResourceInstance
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/06/15 21:00:17 [DEBUG] Resource instance state not found for node "google_dns_record_set.zones", instance google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "google_dns_record_set.zones" references: []
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": entering dynamic subgraph
+2020/06/15 21:00:17 [TRACE] dag/walk: updating graph
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": starting visit (*terraform.NodePlannableResourceInstance)
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": evaluating
+2020/06/15 21:00:17 [TRACE] [walkPlan] Entering eval tree: google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/06/15 21:00:17 [TRACE] EvalReadState: reading state for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] EvalReadState: no state present for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalValidateSelfRef
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalDiff
+2020/06/15 21:00:17 [TRACE] Re-validating config for "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/06/15 21:00:17 [TRACE] GRPCProvider: PlanResourceChange
+2020/06/15 21:00:17 [WARN] Provider "registry.terraform.io/-/google" produced an invalid plan for google_dns_record_set.zones, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .rrdatas: planned value cty.UnknownVal(cty.List(cty.String)) does not match config value cty.ListVal([]cty.Value{cty.UnknownVal(cty.String)})
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalCheckPreventDestroy
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalWriteState
+2020/06/15 21:00:17 [TRACE] EvalWriteState: writing current state object for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalWriteDiff
+2020/06/15 21:00:17 [TRACE] EvalWriteDiff: recorded Create change for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] [walkPlan] Exiting eval tree: google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": visit complete
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": dynamic subgraph completed successfully
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "provider.google (close)"
+2020/06/15 21:00:17 [TRACE] vertex "provider.google (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/06/15 21:00:17 [TRACE] vertex "provider.google (close)": evaluating
+2020/06/15 21:00:17 [TRACE] [walkPlan] Entering eval tree: provider.google (close)
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalCloseProvider
+2020/06/15 21:00:17 [TRACE] GRPCProvider: Close
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2020/06/15 21:00:17 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2020/06/15 21:00:17 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2020/06/15 21:00:17 [TRACE] [walkPlan] Entering eval tree: meta.count-boundary (EachMode fixup)
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2020/06/15 21:00:17 [TRACE] [walkPlan] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2020/06/15 21:00:17 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2020-06-15T21:00:17.192-0700 [DEBUG] plugin: plugin process exited: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86291
+2020-06-15T21:00:17.192-0700 [DEBUG] plugin: plugin exited
+2020/06/15 21:00:17 [TRACE] [walkPlan] Exiting eval tree: provider.google (close)
+2020/06/15 21:00:17 [TRACE] vertex "provider.google (close)": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "root"
+2020/06/15 21:00:17 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2020/06/15 21:00:17 [TRACE] vertex "root": visit complete
+2020/06/15 21:00:17 [INFO] backend/local: apply calling Apply
+2020/06/15 21:00:17 [INFO] terraform: building graph: GraphTypeApply
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/06/15 21:00:17 [TRACE] ConfigTransformer: Starting for path: 
+2020/06/15 21:00:17 [TRACE] ConfigTransformer: Starting for path: sbc
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.DiffTransformer
+2020/06/15 21:00:17 [TRACE] DiffTransformer starting
+2020/06/15 21:00:17 [TRACE] DiffTransformer: found Create change for google_dns_record_set.zones 
+2020/06/15 21:00:17 [TRACE] DiffTransformer: google_dns_record_set.zones will be represented by google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] DiffTransformer complete
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.DiffTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.OrphanResourceTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.OrphanResourceTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/06/15 21:00:17 [TRACE] AttachResourceConfigTransformer: attaching to "google_dns_record_set.zones" (*terraform.NodeApplyableResourceInstance) config from main.tf:8,1-41
+2020/06/15 21:00:17 [TRACE] AttachResourceConfigTransformer: attaching to "google_dns_record_set.zones (prepare state)" (*terraform.NodeApplyableResource) config from main.tf:8,1-41
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/06/15 21:00:17 [DEBUG] Resource state not found for node "google_dns_record_set.zones", instance google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/06/15 21:00:17 [TRACE] ProviderConfigTransformer: attaching to "provider.google" provider configuration from main.tf:1,1-18
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/06/15 21:00:17 [TRACE] ProviderTransformer: google_dns_record_set.zones is provided by provider.google or inherited equivalent
+2020/06/15 21:00:17 [TRACE] ProviderTransformer: google_dns_record_set.zones (prepare state) is provided by provider.google or inherited equivalent
+2020/06/15 21:00:17 [TRACE] ProviderTransformer: exact match for provider.google serving google_dns_record_set.zones (prepare state)
+2020/06/15 21:00:17 [DEBUG] ProviderTransformer: "google_dns_record_set.zones (prepare state)" (*terraform.NodeApplyableResource) needs provider.google
+2020/06/15 21:00:17 [TRACE] ProviderTransformer: exact match for provider.google serving google_dns_record_set.zones
+2020/06/15 21:00:17 [DEBUG] ProviderTransformer: "google_dns_record_set.zones" (*terraform.NodeApplyableResourceInstance) needs provider.google
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/06/15 21:00:17 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+  provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/06/15 21:00:17 [TRACE] AttachSchemaTransformer: attaching resource schema to google_dns_record_set.zones (prepare state)
+2020/06/15 21:00:17 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.google
+2020/06/15 21:00:17 [TRACE] AttachSchemaTransformer: attaching resource schema to google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "google_dns_record_set.zones" references: [var.dns_zone var.config]
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "module.sbc.output.public_ip" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "provider.google" references: [var.environment var.gcp_project var.gcp_region var.gcp_zone]
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.config" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.environment" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.gcp_project" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "module.sbc.output.test" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.service_account_id" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.gcp_zone" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "module.sbc.var.hosts" references: [var.hosts]
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "google_dns_record_set.zones (prepare state)" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.dns_zone" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.hosts" references: []
+2020/06/15 21:00:17 [DEBUG] ReferenceTransformer: "var.gcp_region" references: []
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  module.sbc.output.public_ip - *terraform.NodeApplyableOutput
+  module.sbc.output.test - *terraform.NodeApplyableOutput
+  module.sbc.var.hosts - *terraform.NodeApplyableModuleVariable
+    var.hosts - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/06/15 21:00:17 [TRACE] AttachDependenciesTransformer: google_dns_record_set.zones depends on []
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.DestroyEdgeTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.DestroyEdgeTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.CBDEdgeTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.CBDEdgeTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.PruneUnusedValuesTransformer
+2020/06/15 21:00:17 [TRACE] PruneUnusedValuesTransformer: removing unused value module.sbc.var.hosts
+2020/06/15 21:00:17 [TRACE] PruneUnusedValuesTransformer: removing unused value module.sbc.output.public_ip
+2020/06/15 21:00:17 [TRACE] PruneUnusedValuesTransformer: removing unused value module.sbc.output.test
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.PruneUnusedValuesTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.google (close) - *terraform.graphNodeCloseProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/06/15 21:00:17 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    var.config - *terraform.NodeRootVariable
+    var.dns_zone - *terraform.NodeRootVariable
+  google_dns_record_set.zones (prepare state) - *terraform.NodeApplyableResource
+    provider.google - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+    var.hosts - *terraform.NodeRootVariable
+    var.service_account_id - *terraform.NodeRootVariable
+  provider.google - *terraform.NodeApplyableProvider
+    var.environment - *terraform.NodeRootVariable
+    var.gcp_project - *terraform.NodeRootVariable
+    var.gcp_region - *terraform.NodeRootVariable
+    var.gcp_zone - *terraform.NodeRootVariable
+  provider.google (close) - *terraform.graphNodeCloseProvider
+    google_dns_record_set.zones - *terraform.NodeApplyableResourceInstance
+  root - terraform.graphNodeRoot
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider.google (close) - *terraform.graphNodeCloseProvider
+  var.config - *terraform.NodeRootVariable
+  var.dns_zone - *terraform.NodeRootVariable
+  var.environment - *terraform.NodeRootVariable
+  var.gcp_project - *terraform.NodeRootVariable
+  var.gcp_region - *terraform.NodeRootVariable
+  var.gcp_zone - *terraform.NodeRootVariable
+  var.hosts - *terraform.NodeRootVariable
+  var.service_account_id - *terraform.NodeRootVariable
+  ------
+2020/06/15 21:00:17 [DEBUG] Starting graph walk: walkApply
+2020/06/15 21:00:17 [TRACE] dag/walk: updating graph
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.gcp_project"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.service_account_id"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "google_dns_record_set.zones (prepare state)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "provider.google"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "root"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.config"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.dns_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.gcp_region"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.environment"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.gcp_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "provider.google (close)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added new vertex: "var.hosts"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_project"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "google_dns_record_set.zones (prepare state)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "var.config"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "google_dns_record_set.zones (prepare state)" waiting on "provider.google"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.environment"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "google_dns_record_set.zones" waiting on "var.dns_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google" waiting on "var.gcp_region"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "root" waiting on "provider.google (close)"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "provider.google (close)" waiting on "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "var.service_account_id"
+2020/06/15 21:00:17 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "var.hosts"
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "provider.google", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "google_dns_record_set.zones", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "google_dns_record_set.zones (prepare state)", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: dependencies changed for "provider.google (close)", sending new deps
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.service_account_id"
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.gcp_project"
+2020/06/15 21:00:17 [TRACE] vertex "var.service_account_id": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.environment"
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_project": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.service_account_id": visit complete
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_project": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.gcp_zone"
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_zone": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_zone": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.dns_zone"
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.hosts"
+2020/06/15 21:00:17 [TRACE] vertex "var.dns_zone": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.hosts": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.hosts": visit complete
+2020/06/15 21:00:17 [TRACE] vertex "var.dns_zone": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.gcp_region"
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_region": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.gcp_region": visit complete
+2020/06/15 21:00:17 [TRACE] vertex "var.environment": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] vertex "var.environment": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "var.config"
+2020/06/15 21:00:17 [TRACE] vertex "var.config": starting visit (*terraform.NodeRootVariable)
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "provider.google"
+2020/06/15 21:00:17 [TRACE] vertex "var.config": visit complete
+2020/06/15 21:00:17 [TRACE] vertex "provider.google": starting visit (*terraform.NodeApplyableProvider)
+2020/06/15 21:00:17 [TRACE] vertex "provider.google": evaluating
+2020/06/15 21:00:17 [TRACE] [walkApply] Entering eval tree: provider.google
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2020-06-15T21:00:17.194-0700 [INFO]  plugin: configuring client automatic mTLS
+2020-06-15T21:00:17.215-0700 [DEBUG] plugin: starting plugin: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 args=[/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5]
+2020-06-15T21:00:17.219-0700 [DEBUG] plugin: plugin started: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86292
+2020-06-15T21:00:17.219-0700 [DEBUG] plugin: waiting for RPC address: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5
+2020-06-15T21:00:17.233-0700 [INFO]  plugin.terraform-provider-google_v3.26.0_x5: configuring server automatic mTLS: timestamp=2020-06-15T21:00:17.233-0700
+2020-06-15T21:00:17.257-0700 [DEBUG] plugin: using plugin: version=5
+2020-06-15T21:00:17.257-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: plugin address: address=/var/folders/hz/jl_rjbwx26d5sq47yn7506_40000gn/T/plugin801389203 network=unix timestamp=2020-06-15T21:00:17.257-0700
+2020/06/15 21:00:17 [TRACE] BuiltinEvalContext: Initialized "google" provider for provider.google
+2020/06/15 21:00:17 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:17 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalConfigProvider
+2020/06/15 21:00:17 [TRACE] buildProviderConfig for provider.google: using explicit config only
+2020/06/15 21:00:17 [TRACE] GRPCProvider: GetSchema
+2020/06/15 21:00:17 [TRACE] GRPCProvider: Configure
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Authenticating using configured Google JSON 'credentials'...
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO]   -- Scopes: [https://www.googleapis.com/auth/compute https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/userinfo.email]
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GCE client for path https://www.googleapis.com/compute/v1/projects/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GCE Beta client for path https://www.googleapis.com/compute/beta/projects/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GKE client for path https://container.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating GKE Beta client for path https://container.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud DNS client for path https://www.googleapis.com/dns/v1/projects/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud DNS Beta client for path https://www.googleapis.com/dns/v1beta2/projects/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud KMS client for path https://cloudkms.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Stackdriver Logging client for path https://logging.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Storage client for path https://www.googleapis.com/storage/v1/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google SqlAdmin client for path https://sqladmin.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Pubsub client for path https://pubsub.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Dataflow client for path https://dataflow.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud ResourceManager client for path https://cloudresourcemanager.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud ResourceManager V client for path https://cloudresourcemanager.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Runtimeconfig client for path https://runtimeconfig.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud IAM client for path https://iam.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud IAMCredentials client for path https://iamcredentials.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Service Management client for path https://servicemanagement.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Service Usage client for path https://serviceusage.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Billing client for path https://cloudbilling.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Build client for path https://cloudbuild.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud BigQuery client for path https://www.googleapis.com/bigquery/v2/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud CloudFunctions Client for path https://cloudfunctions.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud BigtableAdmin for path https://bigtableadmin.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Source Repo client for path https://sourcerepo.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Spanner client for path https://spanner.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Dataproc client for path https://dataproc.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Dataproc Beta client for path https://dataproc.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Filestore client for path https://file.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud IoT Core client for path 
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating App Engine client for path https://appengine.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Cloud Composer client for path https://composer.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Service Networking client for path https://servicenetworking.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Storage Transfer client for path https://storagetransfer.googleapis.com/
+2020-06-15T21:00:17.329-0700 [DEBUG] plugin.terraform-provider-google_v3.26.0_x5: 2020/06/15 21:00:17 [INFO] Instantiating Google Cloud Healthcare client for path https://healthcare.googleapis.com/
+2020/06/15 21:00:17 [TRACE] [walkApply] Exiting eval tree: provider.google
+2020/06/15 21:00:17 [TRACE] vertex "provider.google": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "google_dns_record_set.zones (prepare state)"
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones (prepare state)": starting visit (*terraform.NodeApplyableResource)
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones (prepare state)": evaluating
+2020/06/15 21:00:17 [TRACE] [walkApply] Entering eval tree: google_dns_record_set.zones (prepare state)
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalWriteResourceState
+2020/06/15 21:00:17 [TRACE] [walkApply] Exiting eval tree: google_dns_record_set.zones (prepare state)
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones (prepare state)": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: visiting "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": starting visit (*terraform.NodeApplyableResourceInstance)
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": evaluating
+2020/06/15 21:00:17 [TRACE] [walkApply] Entering eval tree: google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalSequence
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalReadDiff
+2020/06/15 21:00:17 [TRACE] EvalReadDiff: Read Create change from plan for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalIf
+2020/06/15 21:00:17 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalIf
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/06/15 21:00:17 [TRACE] EvalReadState: reading state for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] EvalReadState: no state present for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalReadDiff
+2020/06/15 21:00:17 [TRACE] EvalReadDiff: Read Create change from plan for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalDiff
+2020/06/15 21:00:17 [TRACE] Re-validating config for "google_dns_record_set.zones"
+2020/06/15 21:00:17 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/06/15 21:00:17 [TRACE] GRPCProvider: PlanResourceChange
+2020/06/15 21:00:17 [WARN] Provider "registry.terraform.io/-/google" produced an invalid plan for google_dns_record_set.zones, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .rrdatas: planned value cty.UnknownVal(cty.List(cty.String)) does not match config value cty.ListVal([]cty.Value{cty.UnknownVal(cty.String)})
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalCheckPlannedChange
+2020/06/15 21:00:17 [TRACE] EvalCheckPlannedChange: Verifying that actual change (action Create) matches planned change (action Create)
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalReadState
+2020/06/15 21:00:17 [TRACE] EvalReadState: reading state for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] EvalReadState: no state present for google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalReduceDiff
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalIf
+2020/06/15 21:00:17 [TRACE] <root>: eval: terraform.EvalNoop
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalApplyPre
+2020/06/15 21:00:17 [TRACE] <root>: eval: *terraform.EvalApply
+[0m[1mgoogle_dns_record_set.zones: Creating...[0m[0m
+2020/06/15 21:00:17 [ERROR] <root>: eval: *terraform.EvalApply, err: configuration for google_dns_record_set.zones still contains unknown values during apply (this is a bug in Terraform; please report it!)
+2020/06/15 21:00:17 [ERROR] <root>: eval: *terraform.EvalSequence, err: configuration for google_dns_record_set.zones still contains unknown values during apply (this is a bug in Terraform; please report it!)
+2020/06/15 21:00:17 [TRACE] [walkApply] Exiting eval tree: google_dns_record_set.zones
+2020/06/15 21:00:17 [TRACE] vertex "google_dns_record_set.zones": visit complete
+2020/06/15 21:00:17 [TRACE] dag/walk: upstream of "provider.google (close)" errored, so skipping
+2020/06/15 21:00:17 [TRACE] dag/walk: upstream of "meta.count-boundary (EachMode fixup)" errored, so skipping
+2020/06/15 21:00:17 [TRACE] dag/walk: upstream of "root" errored, so skipping
+2020/06/15 21:00:17 [TRACE] statemgr.Filesystem: not making a backup, because the new snapshot is identical to the old
+2020/06/15 21:00:17 [TRACE] statemgr.Filesystem: no state changes since last snapshot
+2020/06/15 21:00:17 [TRACE] statemgr.Filesystem: writing snapshot at terraform.tfstate
+[31m
+2020/06/15 21:00:17 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+[1m[31mError: [0m[0m[1mconfiguration for google_dns_record_set.zones still contains unknown values during apply (this is a bug in Terraform; please report it!)[0m
+
+[0m[0m[0m
+2020/06/15 21:00:17 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+2020-06-15T21:00:17.341-0700 [DEBUG] plugin: plugin process exited: path=/Users/baroukhovadia/dev/terraform-issue-reproductions/25117/.terraform/plugins/darwin_amd64/terraform-provider-google_v3.26.0_x5 pid=86292
+2020-06-15T21:00:17.341-0700 [DEBUG] plugin: plugin exited
