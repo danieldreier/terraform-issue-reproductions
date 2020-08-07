@@ -13,19 +13,9 @@ provider "aws" {
   region = "us-west-2"
 }
 
-variable "instance_ami" {
-  description = "AWS EC2 instance AMI"
-  default     = "ami-04bb0cc469b2b81cc"
-}
-
-variable "instance_type" {
-  description = "EC2 instance type"
-  default     = "t2.micro"
-}
-
 resource "aws_instance" "web" {
-  ami                         = var.instance_ami
-  instance_type               = var.instance_type
+  ami                         = "ami-04bb0cc469b2b81cc"
+  instance_type               = "t2.micro"
 }
 
 output "network_interface_id" {
