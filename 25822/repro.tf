@@ -1,4 +1,8 @@
 terraform {
+  backend "local" {}
+}
+
+terraform {
   required_providers {
     google = {
       version = "~> 3.33.0"
