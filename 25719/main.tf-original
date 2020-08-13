@@ -1,0 +1,13 @@
+data "terraform_remote_state" "data1" {
+  backend = "local"
+
+  config = {
+    path = "${path.module}/module1/terraform.tfstate"
+  }
+}
+
+resource "null_resource" "n1" {
+  triggers = {
+    id = data.terraform_remote_state.data1.outputs.null_id
+  }
+}
