@@ -1,0 +1,31 @@
+// Step 2: Create a Launch Template and update the ASG to use the new LT
+// Expected behavior: the ASG will be modified to use the LT and the LC would be destroyed
+// Here is the updated TF configuration:
+provider "aws" {
+  version = "3.4.0"
+  region = "us-west-2"
+}
+
+resource "aws_launch_template" "foo" {
+  name_prefix = "cust-launch_template--"
+  image_id = "ami-003634241a8fcdec0" 
+  instance_type = "t2.micro"
+}
+
+resource "aws_autoscaling_group" "bar" {
+  name_prefix = "cust-asg--"
+  min_size = 1
+  max_size = 2
+  availability_zones = ["us-west-2a"]
+
+  launch_template {
+    id = aws_launch_template.foo.id
+    version = "$Latest"
+  }
+  tag {
+    key = "ASG-CONFIG"
+    value = "cust-LAUNCH_TEMPLATE"
+    propagate_at_launch = true
+  }
+}
+
