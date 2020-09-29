@@ -3,6 +3,8 @@ Reproduction case for https://github.com/hashicorp/terraform/issues/25535
 Status: unable to reproduce
 Version: 0.13.3
 
+how to run: `./run.sh`
+
 Result:
 
 Unable to reproduce. I get the expected output ending in:
