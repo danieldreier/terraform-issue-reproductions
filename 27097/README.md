@@ -24,7 +24,7 @@ aws_security_group.terraform-0-14-test: Refreshing state... [id=sg-020b1ae84a440
 Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 ```
 
-0.14.0 shows no changes on repeated apply
+0.14.0 reproduction case with AWS does not show this issue. ignore_changes appears to behave as designed.
 ```
 bash-3.2$ terraform-v0.14.0 apply -auto-approve
 aws_security_group.terraform-0-14-test: Creating...
@@ -59,7 +59,7 @@ null_resource.repro: Refreshing state... [id=4809662256601474538]
 Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 ```
 
-0.14.0 behavior (disregards ignore_changes):
+0.14.0 with null_null resource example disregards ignore_changes:
 ```
 bash-3.2$ terraform-v0.14.0 apply -auto-approve
 null_resource.repro: Refreshing state... [id=4809662256601474538]
@@ -87,7 +87,7 @@ null_resource.repro: Creation complete after 0s [id=7179303108771723839]
 Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
 ```
 
-Behavior in local build from v0.14 branch after fix was backported in:
+local build from v0.14 branch after fix was backported in does not appear to resolve this:
 ```
 bash-3.2$ /Users/danieldreier/.go/bin/terraform apply -auto-approve
 null_resource.repro: Refreshing state... [id=7179303108771723839]
