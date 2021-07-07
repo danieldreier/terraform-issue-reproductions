@@ -1,11 +1,11 @@
 Reproduction case for https://github.com/hashicorp/terraform/issues/21559
 
-Status: unable to reproduce
+Status: reproduced with 0.12.0 and not reproduced on 0.12.26
 
 Output of `run.sh`:
 ```
 + rm -rf .terraform terraform.tfstate terraform.tfstate.backup foo.plan
-+ terraform-v0.12.26 init -no-color
++ terraform-v0.12.0 init -no-color
 Initializing modules...
 - ue1 in modules/ue1
 - ue1.core1 in modules/core1
@@ -30,8 +30,8 @@ Initializing the backend...
 
 Initializing provider plugins...
 - Checking for available provider plugins...
-- Downloading plugin for provider "local" (hashicorp/local) 1.4.0...
 - Downloading plugin for provider "random" (hashicorp/random) 2.2.1...
+- Downloading plugin for provider "local" (hashicorp/local) 1.4.0...
 
 The following providers do not have any version constraints in configuration,
 so the latest version was installed.
@@ -53,15 +53,15 @@ should now work.
 If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
-+ terraform-v0.12.26 plan -no-color -out foo.plan
++ terraform-v0.12.0 plan -no-color -out foo.plan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
 persisted to local or remote state storage.
 
-module.ue1.module.core2.module.config.module.live.module.foo.data.local_file.foo: Refreshing state...
 module.ue1.module.core1.module.config.module.live.module.foo.data.local_file.foo: Refreshing state...
-module.uw2.module.core2.module.config.module.live.module.foo.data.local_file.foo: Refreshing state...
 module.uw2.module.core1.module.config.module.live.module.foo.data.local_file.foo: Refreshing state...
+module.ue1.module.core2.module.config.module.live.module.foo.data.local_file.foo: Refreshing state...
+module.uw2.module.core2.module.config.module.live.module.foo.data.local_file.foo: Refreshing state...
 
 ------------------------------------------------------------------------
 
@@ -112,29 +112,52 @@ This plan was saved to: foo.plan
 To perform exactly these actions, run the following command to apply:
     terraform apply "foo.plan"
 
-+ terraform-v0.12.26 apply -no-color foo.plan
-module.ue1.module.core2.random_pet.core: Creating...
-module.uw2.module.core2.random_pet.core: Creating...
-module.uw2.module.core1.random_pet.core: Creating...
-module.ue1.module.core1.random_pet.core: Creating...
-module.ue1.module.core2.random_pet.core: Creation complete after 0s [id=prodconfiga-and-prodconfigb-stable-mako]
-module.uw2.module.core1.random_pet.core: Creation complete after 0s [id=prodconfiga-and-prodconfigb-keen-raptor]
-module.ue1.module.core1.random_pet.core: Creation complete after 0s [id=prodconfiga-and-prodconfigb-expert-raptor]
-module.uw2.module.core2.random_pet.core: Creation complete after 0s [id=prodconfiga-and-prodconfigb-choice-firefly]
++ terraform-v0.12.0 apply -no-color foo.plan
 
-Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
+Error: orphan resource module.uw2.module.core1.module.config.module.live.module.foo.data.local_file.foo still has a non-empty state after apply; this is a bug in Terraform
 
-The state of your infrastructure has been saved to the path
-below. This state is required to modify and destroy your
-infrastructure, so keep it safe. To inspect the complete state
-use the `terraform show` command.
 
-State path: terraform.tfstate
 
-Outputs:
+Error: orphan resource module.ue1.module.core2.module.config.module.live.module.foo.data.local_file.foo still has a non-empty state after apply; this is a bug in Terraform
 
-result = {
-  "ue1" = "core: prodconfiga-and-prodconfigb-expert-raptor"
-  "uw2" = "core: prodconfiga-and-prodconfigb-keen-raptor"
-}
+
+
+Error: orphan resource module.uw2.module.core2.module.config.module.live.module.foo.data.local_file.foo still has a non-empty state after apply; this is a bug in Terraform
+
+
+
+Error: orphan resource module.ue1.module.core1.module.config.module.live.module.foo.data.local_file.foo still has a non-empty state after apply; this is a bug in Terraform
+
+
+
+Error: Reference to undeclared module
+
+  on modules/core1/main.tf line 6, in resource "random_pet" "core":
+   6:   prefix = join("-", module.config.config)
+
+The configuration contains no module.uw2.module.core1.module.config.
+
+
+Error: Reference to undeclared module
+
+  on modules/core1/main.tf line 6, in resource "random_pet" "core":
+   6:   prefix = join("-", module.config.config)
+
+The configuration contains no module.ue1.module.core1.module.config.
+
+
+Error: Reference to undeclared module
+
+  on modules/core2/main.tf line 6, in resource "random_pet" "core":
+   6:   prefix = join("-", module.config.config)
+
+The configuration contains no module.uw2.module.core2.module.config.
+
+
+Error: Reference to undeclared module
+
+  on modules/core2/main.tf line 6, in resource "random_pet" "core":
+   6:   prefix = join("-", module.config.config)
+
+The configuration contains no module.ue1.module.core2.module.config.
 ```
